@@ -1,0 +1,25 @@
+$br1200: 1200px;
+$br992: 992px;
+$br768: 768px;
+$br576: 576px;
+
+@mixin V1200 {
+  @media (min-width: #{$br1200}) {
+    @content;
+  }
+}
+@mixin V992 {
+  @media (min-width: #{$br992}) {
+    @content;
+  }
+}
+@mixin V768 {
+  @media (min-width: #{$br768}) {
+    @content;
+  }
+}
+@mixin V576 {
+  @media (min-width: #{$br576}) {
+    @content;
+  }
+}

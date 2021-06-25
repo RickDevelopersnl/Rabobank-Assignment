@@ -1,0 +1,40 @@
+<div class="placeholder">
+  <div class="container">
+    <div class="row-2">
+      <div class="col">
+        <h1>Upload uw lijst (.csv):</h1>
+        <input
+          type="file"
+          name="Upload CSV"
+          id="csvUpload"
+          #csvUploadField
+          (change)="uploadListener($event)"
+          accept=".csv"
+        />
+      </div>
+      <div class="col-end">
+        <div>
+          <input type="text" placeholder="Filter" #filterItem (keyup)="searchValue(filterItem.value)" />
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <table *ngIf="headerArray.length > 0 && resultArray.length > 0">
+        <thead>
+          <tr>
+            <th *ngFor="let item of headerArray; let headerindex = index">
+              {{ item }}
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let data of resultArray; let dataRowIndex = index">
+            <td *ngFor="let value of data; let dataValueIndex = index">
+              {{ value }}
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
